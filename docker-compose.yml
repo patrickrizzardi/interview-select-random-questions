@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.9'
 services:
   app:
     user: bun
@@ -6,7 +6,5 @@ services:
     restart: unless-stopped
     working_dir: /usr/src/app
     command: sh -c "bun start"
-    ports:
-      - '5000:5000'
     volumes:
       - ./:/usr/src/app
