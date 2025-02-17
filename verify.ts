@@ -56,3 +56,18 @@ console.log(
   `Has ${REQUIRED_ADVANCED_QUESTIONS} advanced questions:`,
   finalAdvancedQuestions.length === REQUIRED_ADVANCED_QUESTIONS ? "✅" : `❌ (${finalAdvancedQuestions.length}/${REQUIRED_ADVANCED_QUESTIONS})`
 );
+
+// Verify randomization
+console.log("\n=== Randomization Check ===");
+const generations = Array.from({ length: 10 }, () => 
+  generateQuestions(questions).map(q => q.question) // Track question text instead of id
+);
+
+// Check if at least 8 out of 10 generations are different
+const uniqueOrderings = new Set(generations.map(gen => gen.join(',')));
+const isRandomEnough = uniqueOrderings.size >= 8; // Allow for some random collisions
+
+console.log(
+  "Questions are randomly ordered:",
+  isRandomEnough ? "✅" : "❌"
+);

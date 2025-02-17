@@ -56,6 +56,7 @@ export interface IQuestion {
 
 export const generateQuestions = (questions: Array<IQuestion>): Array<IQuestion> => {
   console.log('Test');
+
   return [];
 };
 
