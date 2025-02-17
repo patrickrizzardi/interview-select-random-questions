@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  ubuntu:
+    image: ubuntu:latest
+    volumes:
+      - ./:/workspace
+    working_dir: /workspace
+    tty: true
+    stdin_open: true 
