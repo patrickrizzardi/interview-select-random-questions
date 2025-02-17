@@ -1,4 +1,6 @@
-export default [
+import { IQuestion } from "./generateQuestions";
+
+export default <Array<IQuestion>>[
   {
     difficulty: 'beginner',
     instructions: 'Choose the correct answer',

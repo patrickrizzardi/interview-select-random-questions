@@ -1,4 +1,4 @@
-import questions from '../questions';
+import { IQuestion } from '../generateQuestions';
 
 /**
  * Given an array of question objects
@@ -19,7 +19,7 @@ import questions from '../questions';
  * The returned array should have a total of 20 questions at the end.
  */
 
-const createQuestions = questions => {
+export const generateQuestions = (questions: Array<IQuestion>) => {
   const totalAdvancedQuestions = 3;
   const totalIntermediateQuestions = 5;
   const totalBeginnerQuestions = 12;
@@ -39,29 +39,4 @@ const createQuestions = questions => {
   return [...advancedQuestionsRandom, ...intermediateQuestionsRandom, ...beginnerQuestionsRandom];
 };
 
-/**
- * Group the questions by difficulty
- */
-const finalQuestions = createQuestions(questions);
-const finalBeginnerQuestions = finalQuestions.filter(q => q.difficulty === 'beginner');
-const finalIntermediateQuestions = finalQuestions.filter(q => q.difficulty === 'intermediate');
-const finalAdvancedQuestions = finalQuestions.filter(q => q.difficulty === 'advanced');
 
-/**
- * Print the results
- */
-console.log('Total', finalQuestions.length);
-console.log('Beginner', finalBeginnerQuestions.length);
-console.log('Intermediate', finalIntermediateQuestions.length);
-console.log('Advanced', finalAdvancedQuestions.length);
-
-/**
- * Verify no question is repeated
- */
-console.log('No repeated questions:', finalQuestions.length === new Set(finalQuestions).size);
-console.log('No repeated beginner questions:', finalBeginnerQuestions.length === new Set(finalBeginnerQuestions).size);
-console.log(
-  'No repeated intermediate questions:',
-  finalIntermediateQuestions.length === new Set(finalIntermediateQuestions).size
-);
-console.log('No repeated advanced questions:', finalAdvancedQuestions.length === new Set(finalAdvancedQuestions).size);

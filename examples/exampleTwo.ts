@@ -1,4 +1,4 @@
-import questions from '../questions';
+import {  IQuestion } from '../generateQuestions';
 
 /**
  * Given an array of question objects
@@ -19,9 +19,9 @@ import questions from '../questions';
  * The returned array should have a total of 20 questions at the end.
  */
 
-const chosenTestQuestions = [];
+const chosenTestQuestions: Array<IQuestion> = [];
 
-const selectQuestions = questions => {
+export const generateQuestions = (questions: Array<IQuestion>) => {
   /**
    * Define the number of questions to be asked for each difficulty level
    * This will be used to determine the number of questions to be asked for each difficulty level
@@ -34,9 +34,9 @@ const selectQuestions = questions => {
    * Define some variables to separate the questions into their respective difficulty levels
    * This will help simplify the process of adding the questions to the final array
    */
-  const advancedQuestions = [];
-  const intermediateQuestions = [];
-  const beginnerQuestions = [];
+  const advancedQuestions: Array<IQuestion>  = [];
+  const intermediateQuestions: Array<IQuestion> = [];
+  const beginnerQuestions: Array<IQuestion> = [];
 
   /**
    * Loop through the questions array and add the questions to the respective difficulty level arrays
@@ -86,29 +86,4 @@ const selectQuestions = questions => {
   return chosenTestQuestions;
 };
 
-/**
- * Group the questions by difficulty
- */
-const finalQuestions = selectQuestions(questions);
-const finalBeginnerQuestions = finalQuestions.filter(q => q.difficulty === 'beginner');
-const finalIntermediateQuestions = finalQuestions.filter(q => q.difficulty === 'intermediate');
-const finalAdvancedQuestions = finalQuestions.filter(q => q.difficulty === 'advanced');
 
-/**
- * Print the results
- */
-console.log('Total', finalQuestions.length);
-console.log('Beginner', finalBeginnerQuestions.length);
-console.log('Intermediate', finalIntermediateQuestions.length);
-console.log('Advanced', finalAdvancedQuestions.length);
-
-/**
- * Verify no question is repeated
- */
-console.log('No repeated questions:', finalQuestions.length === new Set(finalQuestions).size);
-console.log('No repeated beginner questions:', finalBeginnerQuestions.length === new Set(finalBeginnerQuestions).size);
-console.log(
-  'No repeated intermediate questions:',
-  finalIntermediateQuestions.length === new Set(finalIntermediateQuestions).size
-);
-console.log('No repeated advanced questions:', finalAdvancedQuestions.length === new Set(finalAdvancedQuestions).size);
