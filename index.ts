@@ -3,6 +3,7 @@ import { generateQuestions } from "./generateQuestions";
 
 // Generate and group questions by difficulty
 const finalQuestions = generateQuestions(questions);
+
 const finalBeginnerQuestions = finalQuestions.filter(
   (q) => q.difficulty === "beginner"
 );
@@ -40,8 +41,8 @@ console.log(
 // Verify each difficulty level has the correct number of questions
 console.log("\n=== Difficulty Level Checks ===");
 console.log(
-  "Total Questions:", 
-finalQuestions.length === REQUIRED_BEGINNER_QUESTIONS + REQUIRED_INTERMEDIATE_QUESTIONS + REQUIRED_ADVANCED_QUESTIONS ? "✅" : `❌ (${finalQuestions.length}/${REQUIRED_BEGINNER_QUESTIONS + REQUIRED_INTERMEDIATE_QUESTIONS + REQUIRED_ADVANCED_QUESTIONS})`
+  "Total Questions:",
+  finalQuestions.length === REQUIRED_BEGINNER_QUESTIONS + REQUIRED_INTERMEDIATE_QUESTIONS + REQUIRED_ADVANCED_QUESTIONS ? "✅" : `❌ (${finalQuestions.length}/${REQUIRED_BEGINNER_QUESTIONS + REQUIRED_INTERMEDIATE_QUESTIONS + REQUIRED_ADVANCED_QUESTIONS})`
 );
 console.log(
   `Has ${REQUIRED_BEGINNER_QUESTIONS} beginner questions:`,

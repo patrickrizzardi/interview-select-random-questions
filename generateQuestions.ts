@@ -34,5 +34,5 @@ export interface IQuestion {
 }
 
 export const generateQuestions = (questions: Array<IQuestion>): Array<IQuestion> => {
-
+  const advancedQuestions: IQuestion[] = [];
 };

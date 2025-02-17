@@ -1,23 +1,6 @@
 import {  IQuestion } from '../generateQuestions';
 
-/**
- * Given an array of question objects
- * Question object:
- *   {
- *     difficulty: 'beginner' | 'intermediate' | 'advanced',
- *     instructions: string,
- *     question: string,
- *     options: string[],
- *     correctAnswer: string,
- *   }
- *
- * Create a function that returns an array of the following:
- * 3 random questions where difficulty = 'advanced'
- * 5 random questions where difficulty = 'intermediate'
- * 12 random questions where difficulty = 'beginner'
- *
- * The returned array should have a total of 20 questions at the end.
- */
+
 
 
 
