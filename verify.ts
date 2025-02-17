@@ -23,19 +23,19 @@ const REQUIRED_ADVANCED_QUESTIONS = 3;
 console.log("\n=== Duplicate Checks ===");
 console.log(
   "All questions unique:",
-  finalQuestions.length === new Set(finalQuestions).size ? "✅" : "❌"
+  finalQuestions.length === new Set(finalQuestions).size && finalQuestions.length > 0 ? "✅" : "❌"
 );
 console.log(
   "Beginner questions unique:",
-  finalBeginnerQuestions.length === new Set(finalBeginnerQuestions).size ? "✅" : "❌"
+  finalBeginnerQuestions.length === new Set(finalBeginnerQuestions).size && finalBeginnerQuestions.length > 0 ? "✅" : "❌"
 );
 console.log(
   "Intermediate questions unique:",
-  finalIntermediateQuestions.length === new Set(finalIntermediateQuestions).size ? "✅" : "❌"
+  finalIntermediateQuestions.length === new Set(finalIntermediateQuestions).size && finalIntermediateQuestions.length > 0 ? "✅" : "❌"
 );
 console.log(
   "Advanced questions unique:",
-  finalAdvancedQuestions.length === new Set(finalAdvancedQuestions).size ? "✅" : "❌"
+  finalAdvancedQuestions.length === new Set(finalAdvancedQuestions).size && finalAdvancedQuestions.length > 0 ? "✅" : "❌"
 );
 
 // Verify each difficulty level has the correct number of questions
