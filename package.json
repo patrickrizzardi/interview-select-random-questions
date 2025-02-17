@@ -3,6 +3,7 @@
   "module": "index.js",
   "type": "module",
   "scripts": {
-    "start": "bun --watch index.ts"
+    "start": "bun --watch index.ts",
+    "build": "bun build index.ts --outdir dist --target bun --minify"
   }
 }

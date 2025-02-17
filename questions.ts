@@ -1,4 +1,4 @@
-import { IQuestion } from "./generateQuestions";
+import { IQuestion } from "./index";
 
 export default <Array<IQuestion>>[
   {
